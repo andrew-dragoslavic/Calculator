@@ -12,7 +12,7 @@ def mult(x,y):
 
 def div(x,y):
     if(y == 0):
-        return('ERROR')
+        return('ERROR') #print error
     else:
         return (x/y)
 
