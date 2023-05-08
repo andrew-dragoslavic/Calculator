@@ -3,9 +3,32 @@ import random as r
 import tkinter as tk
 top = tk.Tk()
 top.title("Calculator")
-for i in range(10):
-    button = tk.Button(top, text= i)
-    button.pack()
+top.minsize(300,400)
+top.maxsize(300,400)
+
+entry = tk.Entry(top,font = ("Century 32"), width=300)
+entry.grid(row=0, column=0, columnspan=4)
+entry.place(height = 50, width = 300)
+
+# for i in range(10):
+#     button = tk.Button(top, text= i)
+#     button.pack()
+# for i in range(5):
+#     if(i == 0):
+#         button = tk.Button(top, text= '+')
+#         button.pack()
+#     if(i == 1):
+#         button = tk.Button(top, text= '-')
+#         button.pack()
+#     if(i == 2):
+#         button = tk.Button(top, text= '*')
+#         button.pack()
+#     if(i == 3):
+#         button = tk.Button(top, text= '/')
+#         button.pack()
+#     if(i == 4):
+#         button = tk.Button(top, text= '^')
+#         button.pack()
 # Code to add widgets will go here...
 top.mainloop()
 
