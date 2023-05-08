@@ -16,8 +16,12 @@ def div(x,y):
     else:
         return (x/y)
 
-x = input("x: ") 
-y = input("y: ")
-x = float(x)
-y = float(y)
-print (f'{x} / {y} = {div(x,y)}')
+def exp(x,y):
+    return exp(x,y)
+
+#def function(eq):
+
+
+
+eq = input()
+
