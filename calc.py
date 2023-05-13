@@ -73,13 +73,14 @@
 # print(function(op))
 
 import tkinter as tk
+import math
 
 class Calculator:
     def __init__(self, top):
         self.top = top
         top.title("Calculator")
-        top.minsize(225,275)
-        top.maxsize(225,275)
+        top.minsize(200,250)
+        top.maxsize(200,250)
 
         self.display = tk.Entry(top, width=30)
         self.display.grid(row=0, column=0,rowspan = 1, columnspan=4, padx=0, pady=0)
@@ -111,7 +112,7 @@ class Calculator:
         self.create_button("^", 1, 3)
         self.create_button("π", 1, 2)
 
-    def create_button(self, text, row, column, columnspan=1, padx=0, pady=0):
+    def create_button(self, text, row, column, columnspan=1, padx=2, pady=2):
         button = tk.Button(self.top, text=text, width=5, height=2, command=lambda: self.button_click(text))
         button.grid(row=row, column=column, columnspan=columnspan, padx=padx, pady=pady)
 
