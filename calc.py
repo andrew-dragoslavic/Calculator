@@ -119,7 +119,10 @@ class Calculator:
     def button_click(self, text):
         if text == "=":
             try:
-                result = eval(self.display.get())
+                expression = self.display.get()
+                expression = expression.replace("π", str(math.pi))
+                expression = expression.replace("^", "**")
+                result = eval(expression)
                 self.display.delete(0, tk.END)
                 self.display.insert(0, str(result))
             except:
@@ -127,6 +130,15 @@ class Calculator:
                 self.display.insert(0, "Error")
         elif text == "C":
             self.display.delete(0, tk.END)
+        elif text == "π":
+            if(self.display.get() and (self.display.get()[-1].isdigit() or self.display.get()[-1] == "π")):
+                self.display.insert(tk.END, "*" + text)  # Insert "*" before "pi" if a digit, ")" or "pi" precedes it
+            else:
+                self.display.insert(tk.END, text)   
+        elif text == "DEL":
+            current_expression = self.display.get()
+            self.display.delete(0,tk.END)
+            self.display.insert(0, current_expression[0:-1])
         else:
             self.display.insert(tk.END, text)
 
